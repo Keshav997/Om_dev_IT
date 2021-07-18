@@ -1,0 +1,16 @@
+/* ./src/index.css */
+@tailwind base;
+
+/* write your own custom base style here */
+
+/* start purging */
+@tailwind components;
+/* stop purging */
+
+@import "./form-elements.css";
+
+/* start purging */
+@tailwind utilities;
+/* stop purging */
+
+/* your own custom utilities */

@@ -1,12 +1,12 @@
-import color from "./src/config/branding.config";
+const { color } = require("./src/config/branding.config.js");
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: { color },
   },
   variants: {
-    extend: { color },
+    extend: {},
   },
   plugins: [],
 };
