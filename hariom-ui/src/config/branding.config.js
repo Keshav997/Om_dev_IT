@@ -11,8 +11,8 @@ module.export = {
   },
   currency: "$",
   colors: {
-    primary: "#106ec6",
-    secondary: "#60A5FA",
+    primary: "#000000",
+    secondary: "#009900",
     mandatory: "#ff0000",
     warning: "#ff9800",
     error: "#f44336",

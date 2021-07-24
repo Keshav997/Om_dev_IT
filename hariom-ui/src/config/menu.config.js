@@ -14,7 +14,7 @@ import {
 export const menu_config = {
   header: [
     {
-      title: "Shop Owner",
+      title: "Customer",
       mobileOnly: false,
       icon: faUserTag,
       link: "/landing",
@@ -25,29 +25,49 @@ export const menu_config = {
           link: "/landing",
         },
         {
-          title: "Home",
+          title: "Shop by Catagory",
           icon: faTag,
           link: "/landing",
         },
         {
-          title: "Home",
+          title: "My Order",
           icon: faFileContract,
           link: "/landing",
         },
         {
-          title: "Home",
+          title: "My Account",
+          icon: faFileContract,
+          link: "/landing",
+        },
+        {
+          title: "Explore",
           icon: faUsers,
           link: "/landing",
         },
         {
-          title: "Home",
+          title: "About Us",
+          icon: faRupeeSign,
+          link: "/landing",
+        },
+        {
+          title: "Contact Us",
+          icon: faRupeeSign,
+          link: "/landing",
+        },
+        {
+          title: "Settings",
+          icon: faRupeeSign,
+          link: "/landing",
+        },
+        {
+          title: "Customer Service",
           icon: faRupeeSign,
           link: "/landing",
         },
       ],
     },
     {
-      title: "Customer",
+      title: "Shop Owner",
       mobileOnly: false,
       icon: faChartBar,
       link: "/landing",
@@ -68,7 +88,7 @@ export const menu_config = {
           link: "/landing",
         },
         {
-          title: "My Oders",
+          title: "My Uploads",
           icon: faHome,
           link: "/landing",
         },

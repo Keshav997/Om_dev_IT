@@ -10,7 +10,7 @@ export default function Sidebar({ nav, service_type, showMenu, toggleMenu }) {
   return (
     <>
       {/* {desktop menu} */}
-      <ul
+      {/* <ul
         className={
           "hidden md:flex md:flex-col w-16 bg-black text-white bg-opacity-50 min-h-screen max-h-full -mt-2 shadow-inner"
         }
@@ -24,7 +24,7 @@ export default function Sidebar({ nav, service_type, showMenu, toggleMenu }) {
               isActive={nav[0] === item.title}
             />
           ))}
-      </ul>
+      </ul> */}
       {/* {mobile menu} */}
       <div
         className={
@@ -47,10 +47,10 @@ export default function Sidebar({ nav, service_type, showMenu, toggleMenu }) {
             />
           </div>
         </ul>
-        <ul className="z-30 bg-black text-white bg-opacity-60 min-h-screen max-h-full -mt-2 shadow-inner">
+        <ul className="z-30 bg-secondary min-h-screen max-h-full -mt-2 shadow-inner">
           {menu_config.header.map((hdr, idx) => (
             <div className="w-full" key={idx}>
-              <div className="w-full py-2 text-xs bg-primary text-white flex item-center justify-center">
+              <div className="w-full py-2 text-xs bg-secondary flex item-center justify-center">
                 {hdr.title}
               </div>
               {hdr.sidebar.map((item, idx) => (

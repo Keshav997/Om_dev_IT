@@ -4,8 +4,6 @@ import { faBars, faCog, faPowerOff } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const { logo } = require("../config/branding.config");
-
 const links = [
   { href: "/settings", icon: faCog, label: "Settings" },
   { href: "/logout", icon: faPowerOff, label: "Logout" },
@@ -22,8 +20,8 @@ export default function Header({ menu, service_type, toggleMenu }) {
           <li>
             <img
               alt="logo"
-              // src={logo.small}
-              className="h-10 items-center mt-0 mr-2 justify-center md:justify-start"
+              src="\images\app-logo-header.png"
+              className="h-12 items-center mt-2 mr-2 justify-center md:justify-start"
             />
           </li>
           <li className="pl-4 hidden md:flex flex-row items-center text-base my-1 divide-x divide-neutral">
@@ -45,7 +43,7 @@ export default function Header({ menu, service_type, toggleMenu }) {
               ))}
           </li>
         </div>
-        <div className="flex items-center md:divide-x divide-gray-200 space-x-2">
+        <div className="flex items-center hover:text-secondary md:divide-x divide-gray-200 space-x-2">
           <div className="flex flex-row px-4">
             <FontAwesomeIcon icon={faBell} size="lg" />
           </div>
