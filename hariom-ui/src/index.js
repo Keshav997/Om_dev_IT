@@ -3,11 +3,18 @@ import ReactDOM from "react-dom";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/index.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+//Routed Components
+import HomePage from "./pages/home";
+
+require("dotenv").config();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <div>Hello Team, Welcome...!</div>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Switch>
+      <Route exact={true} path="/" component={HomePage} />
+    </Switch>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
