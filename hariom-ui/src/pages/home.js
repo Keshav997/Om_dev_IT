@@ -1,4 +1,5 @@
 import { Layout, ClientService } from "../layout/index";
+import PageSlide from "../components/page-slide";
 
 export default function HomePage() {
   let nav = ["Home", "Login"];
@@ -208,6 +209,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        <PageSlide />
       </Layout>
     </>
   );
