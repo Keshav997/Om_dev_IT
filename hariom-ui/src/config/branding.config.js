@@ -1,6 +1,6 @@
 const colors = require("tailwindcss/colors");
 
-module.export = {
+module.exports = {
   logo: {
     large: "",
     small: "",

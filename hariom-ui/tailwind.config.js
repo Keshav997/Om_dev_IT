@@ -1,9 +1,9 @@
-const { color } = require("./src/config/branding.config.js");
+const { colors } = require("./src/config/branding.config.js");
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: { color },
+    extend: { colors },
   },
   variants: {
     extend: {},
