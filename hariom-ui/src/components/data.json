@@ -1,0 +1,62 @@
+[
+    {
+        "title" : "Fasain Offer",
+        "image" : "/SliderImage/Slider1.jpg",
+        "imageOpacity" : 0.5,
+        "lob" : "Fasion",
+        "plans" :[
+            {
+                "label" : "20-40% Off",
+                "content" : "Get Your Dress Soon"
+            }
+        ]
+    },
+    {
+        "title" : "Fasain Offer",
+        "image" : "/SliderImage/Slider2.jpg",
+        "imageOpacity" : 0.5,
+        "lob" : "Fasion",
+        "plans" :[
+            {
+                "label" : "20-40% Off",
+                "content" : "Get Your Dress Soon"
+            }
+        ]
+    },
+    {
+        "title" : "Fasain Offer",
+        "image" : "/SliderImage/Slider3.jpg",
+        "imageOpacity" : 0.5,
+        "lob" : "Fasion",
+        "plans" :[
+            {
+                "label" : "20-40% Off",
+                "content" : "Get Your Dress Soon"
+            }
+        ]
+    },
+    {
+        "title" : "Fasain Offer",
+        "image" : "/SliderImage/Slider4.jpg",
+        "imageOpacity" : 0.5,
+        "lob" : "Fasion",
+        "plans" :[
+            {
+                "label" : "20-40% Off",
+                "content" : "Get Your Dress Soon"
+            }
+        ]
+    },
+    {
+        "title" : "Fasain Offer",
+        "image" : "/SliderImage/Slider10.jpg",
+        "imageOpacity" : 0.5,
+        "lob" : "Fasion",
+        "plans" :[
+            {
+                "label" : "20-40% Off",
+                "content" : "Get Your Dress Soon"
+            }
+        ]
+    }
+]

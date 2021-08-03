@@ -1,52 +1,83 @@
 import {
   faChevronCircleLeft,
   faChevronCircleRight,
-  faCircle as faCircleSolid,
 } from "@fortawesome/free-solid-svg-icons";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
-import * as allSvgIcons from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+const imageData = require("./data.json");
 
 export default function PageSlide() {
-  const plansPerpage = 3;
-  const slideTimeout = 300;
-  let [pageNo, setPageNo] = useState(0);
-  let [planStartNo, setPlanStartNo] = useState(0);
-  let [slideLeft, setSlideLeft] = useState(false);
-  let [slideRight, setSlideRight] = useState(false);
-  let [pageLeftRequired, setPageLeftRequired] = useState(false);
-  let [pageRightRequired, setPageRightRequired] = useState(false);
-  useEffect(() => {
-    if (slideLeft) {
-      const timer = setTimeout(() => {
-        setSlideLeft(false);
-        setPageNo(pageNo - 1);
-        setPlanStartNo(Math.max(0, planStartNo - plansPerpage));
-      }, slideTimeout);
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-    if (slideRight) {
-      const timer = setTimeout(() => {
-        setSlideRight(false);
-        setPageNo(pageNo + 1);
-        setPlanStartNo(Math.max(planStartNo + plansPerpage, 4));
-      }, slideTimeout);
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [
-    slideLeft,
-    slideRight,
-    pageRightRequired,
-    pageLeftRequired,
-    pageNo,
-    planStartNo,
-  ]);
+  // const slideTimeout = 300;
+  let [initDone, setInitDone] = useState(false);
+  let [lobIndex, setLobIndex] = useState(0);
+  const history = useHistory();
 
-  const moveForwardNextPage = () => {};
+  const goBack = () => {
+    lobIndex === 0
+      ? setLobIndex(imageData.length - 1)
+      : setLobIndex(lobIndex - 1);
+  };
+  const goNext = () => {
+    lobIndex === imageData.length - 1
+      ? setLobIndex(0)
+      : setLobIndex(lobIndex + 1);
+  };
+  useEffect(() => {
+    let timerFunc = setTimeout(() => {
+      goNext();
+    }, 2000);
+    return () => clearTimeout(timerFunc);
+  });
+  useEffect(() => {
+    if (!initDone) {
+      setInitDone(true);
+    }
+  }, [initDone, setInitDone]);
+
+  return (
+    <div className="relative p-2 bg-white-50 flex flex-col place-content-between">
+      <div
+        className="absolute m-1 bg-cover bg-center left-0 right-0 w-full h-60 z-0"
+        style={{
+          backgroundImage: `url(${imageData[lobIndex].image})`,
+          //  filter: `opacity(${imageData[lobIndex].imageOpacity})`,
+        }}
+      >
+        <div className="flex flex-col">
+          <div className="flex flex-row justify-center items-center">
+            <div
+              className="w-8 h-8 flex items-center justify-center bg-black text-white rounded-full cursor-pointer z-30"
+              onClick={goBack}
+            >
+              <FontAwesomeIcon icon={faChevronCircleLeft} />
+            </div>
+            <span onClick={(e) => history.push(`/landing`)}>Dokan</span>
+            <div
+              className="w-8 h-8 flex items-center justify-center bg-black text-white rounded-full cursor-pointer z-30"
+              onClick={goBack}
+            >
+              <FontAwesomeIcon icon={faChevronCircleRight} />
+            </div>
+            <div className="flex flex-row justify-between">
+              <div className="flex flex-row items-center gap-x-2">
+                {imageData.map((_, idx) => (
+                  <div
+                    className={`w-4 h-4 ${
+                      idx === lobIndex
+                        ? "bg-primary"
+                        : "bg-neutral border border-neutral-dark"
+                    } rounded-full cursor-pointer z-30`}
+                    onClick={(e) => setLobIndex(idx)}
+                  >
+                    &nbsp;
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
