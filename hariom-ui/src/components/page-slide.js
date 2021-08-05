@@ -1,6 +1,6 @@
 import {
-  faChevronCircleLeft,
-  faChevronCircleRight,
+  faChevronLeft,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
@@ -36,43 +36,50 @@ export default function PageSlide() {
   }, [initDone, setInitDone]);
 
   return (
-    <div className="relative p-2 bg-white-50 flex flex-col place-content-between">
-      <div
-        className="absolute m-1 bg-cover bg-center left-0 right-0 w-full h-60 z-0"
-        style={{
-          backgroundImage: `url(${imageData[lobIndex].image})`,
-          //  filter: `opacity(${imageData[lobIndex].imageOpacity})`,
-        }}
-      >
+    <div className="bg-white-50 flex flex-col place-content-between">
+      <div>
         <div className="flex flex-col">
           <div className="flex flex-row justify-center items-center">
             <div
-              className="w-8 h-8 flex items-center justify-center bg-black text-white rounded-full cursor-pointer z-30"
-              onClick={goBack}
+              className="sticky bg-cover bg-center left-0 right-0 w-full h-60 z-0"
+              style={{
+                backgroundImage: `url(${imageData[lobIndex].image})`,
+                //  filter: `opacity(${imageData[lobIndex].imageOpacity})`,
+              }}
+            //  onClick={(e) => history.push(`/landing`)}
             >
-              <FontAwesomeIcon icon={faChevronCircleLeft} />
-            </div>
-            <span onClick={(e) => history.push(`/landing`)}>Dokan</span>
-            <div
-              className="w-8 h-8 flex items-center justify-center bg-black text-white rounded-full cursor-pointer z-30"
-              onClick={goBack}
-            >
-              <FontAwesomeIcon icon={faChevronCircleRight} />
-            </div>
-            <div className="flex flex-row justify-between">
-              <div className="flex flex-row items-center gap-x-2">
-                {imageData.map((_, idx) => (
-                  <div
-                    className={`w-4 h-4 ${
-                      idx === lobIndex
-                        ? "bg-primary"
-                        : "bg-neutral border border-neutral-dark"
-                    } rounded-full cursor-pointer z-30`}
-                    onClick={(e) => setLobIndex(idx)}
-                  >
-                    &nbsp;
-                  </div>
-                ))}
+              <div className="flex flex-row justify-between items-center">
+                <div
+                  className="p-2 text-white cursor-pointer z-30 "
+                  onClick={goBack}
+                >
+                  {" "}
+                  <FontAwesomeIcon size="2x" icon={faChevronLeft} />
+                </div>
+                <div
+                  className="p-2 text-white cursor-pointer z-30"
+                  onClick={goNext}
+                >
+                  {" "}
+                  <FontAwesomeIcon size="2x" icon={faChevronRight} />
+                </div>
+              </div>
+
+              <div className="flex flex-row pt-36 justify-center">
+                <div className="flex flex-row items-center gap-x-2">
+                  {imageData.map((_, idx) => (
+                    <div
+                      className={`w-2 h-2 ${
+                        idx === lobIndex
+                          ? "bg-primary"
+                          : "bg-neutral border border-neutral-dark"
+                      } rounded-full cursor-pointer z-30`}
+                      onClick={(e) => setLobIndex(idx)}
+                    >
+                      &nbsp;
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ export function Layout({ children, nav, service_type }) {
   const toggleMenu = () => setShowMenu(!showMenu);
   return (
     // <span>Inside layout</span>
-    <div className="w-screen relative">
+    <div className="w-screen relative h-auto">
       <Header {...{ service_type, toggleMenu }} />
       {/* <QuickLinks /> */}
       <div className="flex flex-row min-h-screen">
